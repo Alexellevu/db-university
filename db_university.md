@@ -67,6 +67,10 @@ SELECT `exam_student`.`exam_id` AS codice_appello , AVG(exam_student.vote) AS me
 FROM `exam_student` 
 GROUP BY `exam_id`;
 
+## 4
+<!-- Contare quanti corsi di laurea ci sono per ogni dipartimento -->
+SELECT department_id AS codice_dipartimento, COUNT(degrees.id) AS numero_corsi FROM `degrees` GROUP BY department_id;
+
 
 
 
