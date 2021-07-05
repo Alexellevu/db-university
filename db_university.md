@@ -48,3 +48,11 @@ SELECT COUNT(id)
 FROM `teachers`
 WHERE `phone`IS NULL;
 
+
+## GROUP BY
+<!-- Contare quanti iscritti ci sono stati ogni anno -->
+
+
+
+
+
