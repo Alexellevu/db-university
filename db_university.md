@@ -50,9 +50,26 @@ WHERE `phone`IS NULL;
 
 
 ## GROUP BY
+
+## 1
 <!-- Contare quanti iscritti ci sono stati ogni anno -->
+SELECT COUNT(*) AS numero_studenti, YEAR(enrolment_date) AS anno_di_iscrizione FROM students GROUP BY anno_di_iscrizione
+
+## 2
+<!-- Contare gli insegnanti che hanno l'ufficio nello stesso edificio -->
+SELECT `office_address` AS Edificio, COUNT(*) AS nemero_uffici_insegnanti
+FROM `teachers`
+GROUP BY `office_address`;
+
+## 3
+<!-- Calcolare la media dei voti di ogni appello d'esame -->
+SELECT `exam_student`.`exam_id` AS codice_appello , AVG(exam_student.vote) AS media_voti
+FROM `exam_student` 
+GROUP BY `exam_id`;
 
 
 
 
+
+ 
 
