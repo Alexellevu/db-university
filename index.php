@@ -8,7 +8,7 @@ define("DB_PASSWORD", "root" );
 define("DB_NAME", "university");
 define("DB_PORT", '3306');
 
-var_dump(DB_SERVERNAME, DB_USERNAME, DB_PASSWORD,DB_NAME, DB_PORT );
+
 
 # 2. Stabiliamo connessione con il database
 $connection = new mysqli(DB_SERVERNAME, DB_USERNAME, DB_PASSWORD, DB_NAME, DB_PORT);
@@ -23,10 +23,7 @@ if ($connection && $connection->connect_error) {
 # 4. Eseguiamo una query se la connesione é stata stabilita
 echo 'Connection Successful, Go!';
 
-$sql = "SELECT * FROM `users` WHERE `name` = '" . $name . "';";
-$connection->query($sql);
-var_dump($sql);
-$results = $connection->query($sql);
+
 
 
 
