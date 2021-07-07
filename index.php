@@ -23,27 +23,14 @@ if ($connection && $connection->connect_error) {
 # 4. Eseguiamo una query se la connesione é stata stabilita
 echo 'Connection Successful, Go!';
 
-$name = $_GET['name'];
 $sql = "SELECT * FROM `users` WHERE `name` = '" . $name . "';";
+$connection->query($sql);
 var_dump($sql);
 $results = $connection->query($sql);
 
-if ($results && $results->num_rows > 0) {
-    // Cicliare tra i risultati e mostraiamoli a schermo
-    //var_dump($results->fetch_assoc());
-    while ($user = $results->fetch_array()) {
-        ?>
-        <h1><?= $user['name']; ?></h1>
-        <?php
-  }
-} elseif ($results) {
-  echo 'Nessun Risultato';
-} else {
-  echo 'Errore nella query';
-}
 
-# 6. Chiudi la connessione
-$connection->close();
+
+
 
 
 ?>
